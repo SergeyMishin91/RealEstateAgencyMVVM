@@ -25,5 +25,15 @@ namespace RealEstateAgency.UI.Data
                     .SingleAsync(e => e.EstateID == estateId);
             }
         }
+
+        public async Task SaveAsync(Estate estate)
+        {
+            using (var ctx = contextCreator())
+            {
+                ctx.Estates.Attach(estate);
+                ctx.Entry(estate).State = EntityState.Modified;
+                await ctx.SaveChangesAsync();
+            }
+        }
     }
 }

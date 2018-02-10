@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace RealEstateAgency.UI.View
 {
     /// <summary>
-    /// Interaction logic for EstateDetailViewModel.xaml
+    /// Interaction logic for EstateDetailView.xaml
     /// </summary>
-    public partial class EstateDetailViewModel : UserControl
+    public partial class EstateDetailView : UserControl
     {
-        public EstateDetailViewModel()
+        public EstateDetailView()
         {
             InitializeComponent();
         }

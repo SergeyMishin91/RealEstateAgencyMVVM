@@ -4,37 +4,38 @@ using System.Runtime.CompilerServices;
 
 namespace RealEstateAgency.Model
 {
-    public class Estate : INotifyPropertyChanged
+    public class Estate 
     {
-        #region Estate fields
-        private int estateID;
-        //private string _estateFunction;
-        private string _estateName;
-        //private string _estateInventoryNumber;
-        private double _estateSpace;
-        private string _estateAdress;
-        //private int _estateYear;
-        //private string _estateWall;
-        //private string _estateState;
-        //private string _estateOwner;
-        private double _estateCostOfSale;
-        //private string _estateDescription;
-        //private Image _photo;
+        //#region Estate fields
+        //private int estateID;
+        ////private string _estateFunction;
+        //private string _estateName;
+        ////private string _estateInventoryNumber;
+        //private double _estateSpace;
+        //private string _estateAdress;
+        ////private int _estateYear;
+        ////private string _estateWall;
+        ////private string _estateState;
+        ////private string _estateOwner;
+        //private double _estateCostOfSale;
+        ////private string _estateDescription;
+        ////private Image _photo;
 
-        #endregion
+        //#endregion
 
         #region Estate properties
 
-        public int EstateID
-        {
-            get { return estateID; }
-            set
-            {
-                if (value == estateID) return;
-                estateID = value;
-                OnPropertyChanged();
-            }
-        }
+        public int EstateID { get; set; }
+
+        [Required]
+        [StringLength(30)]
+        public string EstateName { get; set; }
+
+        public double EstateSpace { get; set; }
+
+        public string EstateAdress { get; set; }
+
+        public double EstateCostOfSale { get; set; }
 
         //public string EstateFunction
         //{
@@ -46,18 +47,7 @@ namespace RealEstateAgency.Model
         //        OnPropertyChanged();
         //    }
         //}
-        [Required]
-        [StringLength(30)]
-        public string EstateName
-        {
-            get { return _estateName; }
-            set
-            {
-                if (value == _estateName) return;
-                _estateName = value;
-                OnPropertyChanged();
-            }
-        }
+
 
         //public string EstateInventoryNumber
         //{
@@ -70,27 +60,7 @@ namespace RealEstateAgency.Model
         //    }
         //}
 
-        public double EstateSpace
-        {
-            get { return _estateSpace; }
-            set
-            {
-                if (value == _estateSpace) return;
-                _estateSpace = value;
-                OnPropertyChanged();
-            }
-        }
 
-        public string EstateAdress
-        {
-            get { return _estateAdress; }
-            set
-            {
-                if (value == _estateAdress) return;
-                _estateAdress = value;
-                OnPropertyChanged();
-            }
-        }
 
         //public int EstateYear
         //{
@@ -136,16 +106,7 @@ namespace RealEstateAgency.Model
         //    }
         //}
 
-        public double EstateCostOfSale
-        {
-            get { return _estateCostOfSale; }
-            set
-            {
-                if (value == _estateCostOfSale) return;
-                _estateCostOfSale = value;
-                OnPropertyChanged();
-            }
-        }
+
 
         //public string EstateDescription
         //{
@@ -161,22 +122,22 @@ namespace RealEstateAgency.Model
         //public Image Photo { get; set; }
         #endregion
 
-        public Estate() { }
-        public Estate(int id, string name, double space, string adress, double cost)
-        {
-            estateID = id;
-            _estateName = name;
-            _estateSpace = space;
-            _estateAdress = adress;
-            _estateCostOfSale = cost;
-            //_photo = photo;
-        }
+        //public Estate() { }
+        //public Estate(int id, string name, double space, string adress, double cost)
+        //{
+        //    estateID = id;
+        //    _estateName = name;
+        //    _estateSpace = space;
+        //    _estateAdress = adress;
+        //    _estateCostOfSale = cost;
+        //    //_photo = photo;
+        //}
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        internal void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        
+        //public event PropertyChangedEventHandler PropertyChanged;
+        //internal void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
+
     }
 }

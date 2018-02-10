@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Prism.Events;
 using RealEstateAgency.DataAccess;
 using RealEstateAgency.UI.Data;
 using RealEstateAgency.UI.ViewModel;
@@ -10,6 +11,8 @@ namespace RealEstateAgency.UI.Sturtup
         public IContainer Bootstrap()
         {
             var builder = new ContainerBuilder();
+
+            builder.RegisterType<EventAggregator>().As<IEventAggregator>().SingleInstance();
 
             builder.RegisterType<EstateOrganizeDbContext>().AsSelf();
 
